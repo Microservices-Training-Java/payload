@@ -3,9 +3,11 @@ package org.aibles.header.configuration;
 import org.aibles.header.dto.Payload;
 import org.aibles.header.util.PayloadUtil;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan(basePackages = "org.aibles.header.dto")
 public class HeaderConfiguration {
 
   @Bean
