@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "org.aibles.header.dto")
+@ComponentScan(basePackages = {"org.aibles.header.dto", "org.aibles.header.interceptor"})
 public class HeaderConfiguration {
 
   @Bean
