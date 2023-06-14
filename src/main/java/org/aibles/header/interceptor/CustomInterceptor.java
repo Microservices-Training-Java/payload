@@ -28,7 +28,7 @@ public class CustomInterceptor implements HandlerInterceptor {
       payload.setUsername(request.getHeader(PayloadConstant.USERNAME.getValue()));
       payload.setUserId(request.getHeader(PayloadConstant.USER_ID.getValue()));
       payload.setLanguage(request.getHeader(PayloadConstant.LANGUAGE.getValue()));
-      log.debug("Payload: {}", payload.toString());
+      log.info("Payload: {}", payload.toString());
     } catch (Exception e) {
       log.error("Error when catch header: {}", e.getMessage());
       e.printStackTrace();
