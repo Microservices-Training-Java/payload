@@ -6,9 +6,9 @@ import org.springframework.http.HttpHeaders;
 
 @RequiredArgsConstructor
 public class PayloadUtil {
-  private static final String FIELD_NAME_USER_ID = "userId";
+  private static final String FIELD_NAME_USER_ID = "user_id";
   private static final String FIELD_NAME_LANGUAGE = "language";
-  private static final String FIELD_NAME_USER_ROLES = "userRoles";
+  private static final String FIELD_NAME_USER_ROLES = "user_roles";
   private static final String FIELD_NAME_USER_NAME = "username";
   private final Payload payload;
 

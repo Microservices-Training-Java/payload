@@ -1,9 +1,9 @@
 package org.aibles.header.constant;
 
 public enum PayloadConstant {
-  USER_ID("userId"), LANGUAGE("language"),
+  USER_ID("user_id"), LANGUAGE("language"),
 
-  USER_ROLES("userRoles"), USERNAME("username");
+  USER_ROLES("user_roles"), USERNAME("username");
 
   private final String value;
 

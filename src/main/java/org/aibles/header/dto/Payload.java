@@ -17,5 +17,4 @@ public class Payload {
   private String language;
   private Set<String> userRoles;
   private String username;
-
 }
