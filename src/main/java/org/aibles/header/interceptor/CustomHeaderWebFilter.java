@@ -3,6 +3,7 @@ package org.aibles.header.interceptor;
 import org.aibles.header.configuration.FieldNameConfiguration;
 import org.aibles.header.constant.PayloadConstant;
 import org.aibles.header.helper.ContextHelper;
+import org.aibles.header.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;
@@ -38,10 +39,10 @@ public class CustomHeaderWebFilter implements WebFilter {
             log.info("userRoles: {}, username: {}, id: {}, language: {}, nameField: {}", userRoles, username, id, language, FieldNameConfiguration.getFieldName());
 
             Map<String, String> params = new HashMap<>();
-            params.put(PayloadConstant.USER_ROLES.getValue(), userRoles);
-            params.put(PayloadConstant.USERNAME.getValue(), username);
-            params.put(FieldNameConfiguration.getFieldName(), id);
-            params.put(PayloadConstant.LANGUAGE.getValue(), language);
+            params.put(PayloadConstant.USER_ROLES.getValue(), StringUtils.nullToEmpty(userRoles));
+            params.put(PayloadConstant.USERNAME.getValue(), StringUtils.nullToEmpty(username));
+            params.put(FieldNameConfiguration.getFieldName(), StringUtils.nullToEmpty(id));
+            params.put(PayloadConstant.LANGUAGE.getValue(), StringUtils.nullToEmpty(language));
             log.info("done catch header: ------->");
 
             return contextHelper.setDataInContext(params).then(chain.filter(exchange)) // Proceed with the filter chain
