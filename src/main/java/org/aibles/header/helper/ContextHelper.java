@@ -19,10 +19,10 @@ public class ContextHelper {
     }
 
     public Mono<String> getDataFromContext(String key, String defaultValue) {
-        return Mono.subscriberContext()
-                .map(context -> {
-                    String value = context.getOrDefault(key, defaultValue);
-                    return  value;
-                });
+        return Mono.deferContextual(ctxView -> {
+            String value = ctxView.getOrDefault(key, defaultValue);
+            assert value != null;
+            return Mono.just(value);
+        });
     }
 }
